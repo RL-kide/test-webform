@@ -24,7 +24,7 @@ document.getElementById('assessmentForm').addEventListener('submit', function(e)
     
     // Google Apps ScriptのウェブアプリURL
     // 実際のデプロイ後のURLに置き換える必要があります
-    const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL';
+    const scriptURL = 'https://script.google.com/a/macros/reservelink.co.jp/s/AKfycbyNmcUAPRL1O8a32ohg9-Vr0BFxWJR4IuHPNiEM1BjyN4NOlBrmeXRNfPWPvhbau_amUQ/exec';
     
     // JSONデータをGASに送信
     fetch(scriptURL, {
