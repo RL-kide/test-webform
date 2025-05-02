@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有能な経営担当者の8つの原則 自己評価シート</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            padding-left: 10px;
+            border-left: 5px solid #3498db;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: center;
+        }
+        .radio-option {
+            margin: 0 15px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 80px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .success-message {
+            background-color: #dff0d8;
+            color: #3c763d;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .info-text {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="success-message" class="success-message">
+        評価が正常に送信されました。ありがとうございます。
+    </div>
+
+    <h1>有能な経営担当者の8つの原則 自己評価シート</h1>
+    
+    <div class="section">
+        <p class="info-text">このフォームは一倉定氏の「マネジメントへの挑戦」に基づく8つの原則について自己評価するためのものです。各項目について、「達成」「未達成」のいずれかを選択し、備考欄に具体的な状況や改善案を記入してください。</p>
+        
+        <form id="assessmentForm">
+            <!-- 基本情報 -->
+            <div class="section">
+                <h2>基本情報</h2>
+                <table>
+                    <tr>
+                        <td>お名前</td>
+                        <td><input type="text" name="name" required style="width: 100%; padding: 8px;"></td>
+                    </tr>
+                    <tr>
+                        <td>部署・役職</td>
+                        <td><input type="text" name="position" required style="width: 100%; padding: 8px;"></td>
+                    </tr>
+                    <tr>
+                        <td>評価日</td>
+                        <td><input type="date" name="date" required style="width: 100%; padding: 8px;"></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 第1原則 -->
+            <div class="section">
+                <h2>1. まず自分自身を管理せよ</h2>
+                <p>自己管理の基本は、他人を管理する前に自分自身をコントロールすることです。</p>
+                
+                <table>
+                    <tr>
+                        <th>評価項目</th>
+                        <th>評価</th>
+                        <th>備考</th>
+                    </tr>
+                    <tr>
+                        <td>自分の仕事と責任を明確に理解していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item1_1" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item1_1" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note1_1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>自分自身に高い目標を設定していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item1_2" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item1_2" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note1_2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>自分の業績を客観的に評価していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item1_3" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item1_3" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note1_3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>感情をコントロールし、冷静な判断ができていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item1_4" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item1_4" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note1_4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>自分の弱点や限界を認識していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item1_5" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item1_5" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note1_5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>自己啓発のための時間を確保していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item1_6" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item1_6" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note1_6"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 第2原則 -->
+            <div class="section">
+                <h2>2. 上を向け</h2>
+                <p>良い部下になることが良い上役になる第一歩です。</p>
+                
+                <table>
+                    <tr>
+                        <th>評価項目</th>
+                        <th>評価</th>
+                        <th>備考</th>
+                    </tr>
+                    <tr>
+                        <td>上役が自分に何を求めているかを明確に理解していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item2_1" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item2_1" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note2_1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>会社の目標や方針を理解し、それに沿った行動をしていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item2_2" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item2_2" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note2_2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>同僚が自分に何を期待しているかを把握していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item2_3" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item2_3" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note2_3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>上役や同僚と定期的にコミュニケーションを取っていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item2_4" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item2_4" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note2_4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>顧客のニーズを常に意識して行動していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item2_5" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item2_5" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note2_5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>自分の部門だけでなく、会社全体の視点で考えていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item2_6" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item2_6" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note2_6"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 第3原則 -->
+            <div class="section">
+                <h2>3. すみやかに決断をくだせ</h2>
+                <p>決断の遅れは時機を逸し、部下を不安にさせます。</p>
+                
+                <table>
+                    <tr>
+                        <th>評価項目</th>
+                        <th>評価</th>
+                        <th>備考</th>
+                    </tr>
+                    <tr>
+                        <td>必要な情報を迅速に収集できていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item3_1" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item3_1" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note3_1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>決断をためらうことなく、適切なタイミングで下していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item3_2" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item3_2" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note3_2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>決断に対する責任を自ら負う覚悟がありますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item3_3" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item3_3" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note3_3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>部下の意見を聞きながらも、最終決定は自分で行っていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item3_4" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item3_4" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note3_4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>優柔不断さを克服するための努力をしていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item3_5" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item3_5" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note3_5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>決断後に部下に明確な指示を出していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item3_6" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item3_6" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note3_6"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 第4原則 -->
+            <div class="section">
+                <h2>4. 目標を設定せよ</h2>
+                <p>明確な目標設定が効果的な行動の第一歩です。</p>
+                
+                <table>
+                    <tr>
+                        <th>評価項目</th>
+                        <th>評価</th>
+                        <th>備考</th>
+                    </tr>
+                    <tr>
+                        <td>会社の目標を踏まえた部門の目標を設定していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item4_1" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item4_1" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note4_1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>目標は具体的で測定可能なものになっていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item4_2" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item4_2" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note4_2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>設定した目標を文書化していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item4_3" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item4_3" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note4_3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>目標を上役、同僚、部下と共有していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item4_4" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item4_4" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note4_4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>目標達成のための行動計画を立てていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item4_5" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item4_5" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note4_5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>定期的に目標の進捗状況を確認していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item4_6" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item4_6" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note4_6"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 第5原則 -->
+            <div class="section">
+                <h2>5. 結果に注目せよ</h2>
+                <p>過程よりも結果が重要です。</p>
+                
+                <table>
+                    <tr>
+                        <th>評価項目</th>
+                        <th>評価</th>
+                        <th>備考</th>
+                    </tr>
+                    <tr>
+                        <td>結果を出すことを最優先していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item5_1" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item5_1" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note5_1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>方法にこだわりすぎず、結果を重視していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item5_2" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item5_2" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note5_2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>部下の評価は、努力ではなく結果で行っていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item5_3" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item5_3" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note5_3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>結果を出すために部下の創意工夫を促していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item5_4" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item5_4" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note5_4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>自分の給料は結果を出すために支払われていると理解していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item5_5" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item5_5" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note5_5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>結果を出すために他部門との協力を積極的に行っていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item5_6" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item5_6" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note5_6"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 第6原則 -->
+            <div class="section">
+                <h2>6. 時間を有効に利用せよ</h2>
+                <p>時間は最も貴重な資源です。</p>
+                
+                <table>
+                    <tr>
+                        <th>評価項目</th>
+                        <th>評価</th>
+                        <th>備考</th>
+                    </tr>
+                    <tr>
+                        <td>時間の価値を十分に認識していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item6_1" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item6_1" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note6_1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>上役との連絡に十分な時間を確保していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item6_2" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item6_2" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note6_2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>反復的な業務は部下に任せていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item6_3" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item6_3" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note6_3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>重要な仕事の準備に十分な時間をかけていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item6_4" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item6_4" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note6_4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>定期的に時間の使い方をチェックしていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item6_5" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item6_5" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note6_5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>予定を詰め込みすぎず、余裕を持たせていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item6_6" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item6_6" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note6_6"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 第7原則 -->
+            <div class="section">
+                <h2>7. 優先順位を決定せよ</h2>
+                <p>すべてを処理しようとすると、何も処理できなくなります。</p>
+                
+                <table>
+                    <tr>
+                        <th>評価項目</th>
+                        <th>評価</th>
+                        <th>備考</th>
+                    </tr>
+                    <tr>
+                        <td>何をやらないかを明確に決定していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item7_1" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item7_1" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note7_1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>会社全体の利益を基準に優先順位を決めていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item7_2" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item7_2" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note7_2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>重要度と緊急度を区別して優先順位をつけていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item7_3" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item7_3" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note7_3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>定期的に優先順位の見直しを行っていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item7_4" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item7_4" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note7_4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>古い製品や古い考え方を捨てる勇気がありますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item7_5" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item7_5" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note7_5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>優先順位の低い仕事を断る勇気がありますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item7_6" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item7_6" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note7_6"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 第8原則 -->
+            <div class="section">
+                <h2>8. 人の長所を利用せよ</h2>
+                <p>短所ではなく長所に注目することで人を活かします。</p>
+                
+                <table>
+                    <tr>
+                        <th>評価項目</th>
+                        <th>評価</th>
+                        <th>備考</th>
+                    </tr>
+                    <tr>
+                        <td>部下の長所を積極的に見つけていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item8_1" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item8_1" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note8_1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>部下の長所を伸ばす機会を提供していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item8_2" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item8_2" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note8_2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>部下の短所より長所に焦点を当てていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item8_3" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item8_3" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note8_3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>上役の特性や傾向を理解し活用していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item8_4" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item8_4" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note8_4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>同僚の長所を認め、協力関係を構築していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item8_5" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item8_5" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note8_5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>顧客の特性を理解し、それに合わせた対応をしていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item8_6" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item8_6" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note8_6"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 自己啓発 -->
+            <div class="section">
+                <h2>自己啓発のための追加項目</h2>
+                
+                <table>
+                    <tr>
+                        <th>評価項目</th>
+                        <th>評価</th>
+                        <th>備考</th>
+                    </tr>
+                    <tr>
+                        <td>自己啓発のために日々努力していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item9_1" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item9_1" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note9_1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>読書から得た知識を実践に結びつけていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item9_2" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item9_2" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note9_2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>失敗から学ぶ姿勢を持っていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item9_3" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item9_3" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note9_3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>新しい知識やスキルを積極的に習得していますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item9_4" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item9_4" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note9_4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>他者からのフィードバックを受け入れていますか</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="item9_5" value="達成" required> 達成</label>
+                                <label class="radio-option"><input type="radio" name="item9_5" value="未達成"> 未達成</label>
+                            </div>
+                        </td>
+                        <td><textarea name="note9_5"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 総括 -->
+            <div class="section">
+                <h2>評価結果と改善計画</h2>
+                
+                <p><strong>強み：</strong></p>
+                <textarea name="strengths" style="height: 100px;"></textarea>
+                
+                <p><strong>改善すべき点：</strong></p>
+                <textarea name="improvements" style="height: 100px;"></textarea>
+                
+                <p><strong>具体的な改善計画：</strong></p>
+                <textarea name="action_plan" style="height: 150px;"></textarea>
+                
+                <p><strong>次回評価予定日：</strong></p>
+                <input type="date" name="next_assessment_date" style="width: 100%; padding: 8px;">
+            </div>
+            
+            <button type="submit" id="submitBtn">評価を送信する</button>
+        </form>
+    </div>
+    
+    <footer>
+        <p>*「有能な経営担当者は、まず自分自身を管理することからすべてがはじまる」*</p>
+    </footer>
+
+    <script>
+        document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // フォームデータの収集
+            const formData = new FormData(this);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            // Google Apps Scriptにデータを送信（本来はここで実際のスクリプトURLを設定）
+            const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL';
+            
+            // 実際の送信（デモではコンソールに出力するのみ）
+            console.log('送信データ:', data);
+            
+            // 本番環境では以下のようにデータを送信
+            /*
+            fetch(scriptURL, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('success-message').style.display = 'block';
+                    window.scrollTo(0, 0);
+                    setTimeout(function() {
+                        document.getElementById('success-message').style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('送信に失敗しました。もう一度お試しください。');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('送信中にエラーが発生しました。');
+            });
+            */
+            
+            // デモ用の成功メッセージ表示
+            document.getElementById('success-message').style.display = 'block';
+            window.scrollTo(0, 0);
+            setTimeout(function() {
+                document.getElementById('success-message').style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
