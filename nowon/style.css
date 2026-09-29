@@ -281,3 +281,9 @@ main {
 
 .nothave { list-style: none; padding: 0; columns: 2; font-size: 16px; }
 .nothave li::before { content: '× '; color: var(--ng-ink); }
+
+/* 開いた資料のプレビュー */
+.frame.preview { min-height: 0; margin-top: 24px; }
+.frame.preview[hidden] { display: none; }
+.frame.preview img { max-width: 100%; }
+.preview-text { white-space: pre-wrap; word-break: break-word; font-size: 13px; margin: 0; max-height: 360px; overflow: auto; }

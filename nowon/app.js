@@ -440,6 +440,7 @@
                     '<p>一斉添付をやめた理由が、相手に見える。</p>' +
                     '<p>請求する相手（事務局）には「誤送信と未達が止まる」と訳す。</p>', 'WOWはここ', true) +
                 '</div>' +
+                '<section class="frame preview" id="preview" hidden></section>' +
                 (r && !r.attended ? '<p class="hint">予約#' + r.id + ' はまだ来場していません。<a href="#/entrance">入場で読む</a> か <a href="#/exit">出口の掲示</a> で「来た」を付けると開きます。</p>' : '');
         },
         mount: function () {
@@ -448,23 +449,34 @@
                     const r = findReservation(btn.dataset.id);
                     r.opened = true;
                     saveState();
-                    openFile();
                     render();
+                    openFile();
                 });
             });
         }
     };
 
+    // 開いた資料はページ内に表示する（別タブや確認ダイアログを使わない）
     function openFile() {
         const b = state.box;
-        if (b.fileData) {
-            // dataURL を Blob にして新しいタブで開く
-            fetch(b.fileData).then(function (res) { return res.blob(); }).then(function (blob) {
-                window.open(URL.createObjectURL(blob), '_blank');
+        const out = document.getElementById('preview');
+        if (!out) return;
+        const head = '<div class="frame-head">開いた資料：' + esc(b.fileName) + '</div><div class="frame-body">';
+        if (!b.fileData) {
+            out.innerHTML = head + '<p>（モック）' + esc(b.fileName) + ' を開きました。</p>' +
+                '<p class="hint">主催画面で2MB以下の画像やテキストを置くと、ここに中身を表示します。</p></div>';
+        } else if (/^image\//.test(b.fileType)) {
+            out.innerHTML = head + '<img src="' + b.fileData + '" alt="' + esc(b.fileName) + '"></div>';
+        } else if (/^text\//.test(b.fileType)) {
+            fetch(b.fileData).then(function (res) { return res.text(); }).then(function (text) {
+                out.innerHTML = head + '<pre class="preview-text">' + esc(text) + '</pre></div>';
             });
         } else {
-            alert('（モック）' + b.fileName + ' を開きました。\n主催画面で2MB以下のファイルを置くと、実際に中身を表示します。');
+            out.innerHTML = head + '<p>（モック）' + esc(b.fileName) + ' を開きました。</p>' +
+                '<p class="hint">この形式はモックでは中身を表示しません。画像かテキストなら表示できます。</p></div>';
         }
+        out.hidden = false;
+        out.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     // 開催後｜再送しても添付しない
@@ -542,8 +554,21 @@
         if (route.mount) route.mount(loc.q);
     }
 
-    document.getElementById('resetBtn').addEventListener('click', function () {
-        if (!confirm('デモ状態を初期化しますか？（置いたファイル・来場・開封がリセットされます）')) return;
+    // 誤操作防止のため2回押しで初期化する
+    const resetBtn = document.getElementById('resetBtn');
+    let resetArmed = null;
+    resetBtn.addEventListener('click', function () {
+        if (!resetArmed) {
+            resetBtn.textContent = 'もう一度押すと初期化します';
+            resetArmed = setTimeout(function () {
+                resetArmed = null;
+                resetBtn.textContent = 'デモ状態をリセット';
+            }, 3000);
+            return;
+        }
+        clearTimeout(resetArmed);
+        resetArmed = null;
+        resetBtn.textContent = 'デモ状態をリセット';
         try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* noop */ }
         state = seedState();
         location.hash = '#/';
